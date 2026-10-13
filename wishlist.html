@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist | ShowCase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="features.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i><span>Show<span class="logo-highlight">Case</span></span></a>
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="catalog.html">Products</a>
+                <a href="brands.html">Brands</a>
+                <a href="compare.html">Compare</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="wishlist.html" class="nav-feature-active" aria-current="page"><i class="fa-solid fa-heart" aria-hidden="true"></i> Wishlist</a>
+                <a href="login.html" class="nav-account" data-account-link>Login / Register</a>
+                <button type="button" class="nav-logout" data-nav-logout hidden>Logout</button>
+                <a href="cart.html" class="nav-cta">Cart <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="feature-main">
+        <section class="feature-heading">
+            <p class="feature-eyebrow">SAVED FOR LATER</p>
+            <h1>Your Wishlist</h1>
+            <p>Keep the products you are considering together in one place.</p>
+        </section>
+        <div class="feature-toolbar">
+            <p id="wishlistCount" aria-live="polite">0 saved products</p>
+            <button id="clearWishlist" class="feature-text-button" type="button" disabled>Clear wishlist</button>
+        </div>
+        <div id="wishlistGrid" class="product-grid"></div>
+        <div id="wishlistEmpty" class="feature-empty" hidden>
+            <span class="feature-empty-icon"><i class="fa-regular fa-heart" aria-hidden="true"></i></span>
+            <h2>No saved products yet</h2>
+            <p>Tap the heart on a product to keep it here.</p>
+            <a class="primary-btn" href="catalog.html">Explore products</a>
+        </div>
+    </main>
+
+    <script src="products.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="wishlist.js" defer></script>
+</body>
+</html>

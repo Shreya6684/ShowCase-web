@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Inquiry | ShowCase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="features.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i><span>Show<span class="logo-highlight">Case</span></span></a>
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="catalog.html">Products</a>
+                <a href="brands.html">Brands</a>
+                <a href="compare.html">Compare</a>
+                <a href="contact.html" class="active" aria-current="page">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="wishlist.html" class="nav-feature-active"><i class="fa-regular fa-heart" aria-hidden="true"></i> Wishlist</a>
+                <a href="login.html" class="nav-account" data-account-link>Login / Register</a>
+                <button type="button" class="nav-logout" data-nav-logout hidden>Logout</button>
+                <a href="cart.html" class="nav-cta">Cart <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="feature-main contact-main">
+        <section class="feature-heading">
+            <p class="feature-eyebrow">WE ARE HERE TO HELP</p>
+            <h1>Product inquiry</h1>
+            <p>Send a question about a product and the store team can follow up.</p>
+        </section>
+        <div class="contact-layout">
+            <form id="inquiryForm" class="inquiry-form">
+                <div class="inquiry-form-heading">
+                    <h2>Send an inquiry</h2>
+                    <p>Tell us what you would like to know.</p>
+                </div>
+                <div class="inquiry-fields">
+                    <label for="inquiryName">Your name</label>
+                    <input id="inquiryName" name="name" type="text" autocomplete="name" maxlength="80" required>
+                    <label for="inquiryEmail">Email address</label>
+                    <input id="inquiryEmail" name="email" type="email" autocomplete="email" maxlength="120" required>
+                    <label for="inquiryProduct">Product</label>
+                    <select id="inquiryProduct" name="productId">
+                        <option value="">General question</option>
+                    </select>
+                    <label for="inquiryMessage">Your question</label>
+                    <textarea id="inquiryMessage" name="message" rows="5" maxlength="1200" placeholder="Ask about availability, features, or product details" required></textarea>
+                </div>
+                <button type="submit" class="primary-btn"><i class="fa-regular fa-paper-plane" aria-hidden="true"></i> Send inquiry</button>
+                <p id="inquiryStatus" class="inquiry-status" role="status" aria-live="polite"></p>
+            </form>
+            <aside class="contact-aside">
+                <span class="contact-aside-icon"><i class="fa-regular fa-comments" aria-hidden="true"></i></span>
+                <h2>Need help choosing?</h2>
+                <p>Include the product name and the detail you need clarified. Your inquiry will be available to the store team in the admin workspace.</p>
+                <a href="catalog.html">Browse products <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </aside>
+        </div>
+    </main>
+
+    <script src="products.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="contact.js" defer></script>
+</body>
+</html>

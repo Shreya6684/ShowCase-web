@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Register | ShowCase</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body class="auth-page">
+
+    <header class="auth-header">
+        <a href="index.html" class="auth-logo">
+            <span>Show</span>Case<span class="auth-dot">.</span>
+        </a>
+        <a href="index.html" class="auth-back">
+            <i class="fa-solid fa-arrow-left"></i> Back to Store
+        </a>
+    </header>
+
+    <main class="auth-main">
+        <section class="auth-card">
+            <div class="auth-heading">
+                <div class="auth-icon"><i class="fa-solid fa-user-shield"></i></div>
+                <h1 id="authTitle">Welcome Back!</h1>
+                <p id="authSubtitle">Login to continue shopping.</p>
+            </div>
+
+            <div class="auth-tabs">
+                <button type="button" class="auth-tab active" id="loginTab">
+                    Login
+                </button>
+                <button type="button" class="auth-tab" id="registerTab">
+                    Register
+                </button>
+            </div>
+
+            <form id="authForm">
+                <div class="auth-field" id="nameField" hidden>
+                    <label for="authName">Full Name</label>
+                    <input id="authName" type="text"
+                           placeholder="Enter your name" autocomplete="name">
+                </div>
+
+                <div class="auth-field">
+                    <label for="authEmail">Email Address</label>
+                    <input id="authEmail" type="email"
+                           placeholder="you@example.com"
+                           autocomplete="email" required>
+                </div>
+
+                <div class="auth-field">
+                    <label for="authPassword">Password</label>
+                    <input id="authPassword" type="password"
+                           placeholder="Enter password"
+                           minlength="6" autocomplete="current-password" required>
+                </div>
+
+                <div class="auth-field" id="confirmField" hidden>
+                    <label for="authConfirmPassword">Confirm Password</label>
+                    <input id="authConfirmPassword" type="password"
+                           placeholder="Re-enter password" minlength="6">
+                </div>
+
+                <p id="authMessage" class="auth-message" role="status"
+                   aria-live="polite"></p>
+
+                <button type="submit" class="auth-submit" id="authSubmit">
+                    Login <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </form>
+
+            <p class="auth-switch" id="authSwitchText">
+                Don't have an account?
+                <button type="button" id="switchToRegister">Register</button>
+            </p>
+
+            <p class="auth-note">
+                <i class="fa-solid fa-lock"></i>
+                Demo authentication for this frontend project.
+            </p>
+        </section>
+    </main>
+
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

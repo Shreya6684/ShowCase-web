@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | ShowCase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="cart-header">
+    <a href="index.html" class="cart-logo">ShowCase<span>.</span></a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Products</a>
+        <a href="brands.html">Brands</a>
+        <a href="compare.html">Compare</a>
+        <a href="wishlist.html">Wishlist</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">Cart 🛒</a>
+        <a href="profile.html" data-account-link>My Account</a>
+        <button type="button" data-nav-logout hidden>Logout</button>
+    </nav>
+</header>
+
+<main class="profile-page">
+    <div class="profile-heading">
+        <p class="cart-eyebrow">YOUR ACCOUNT</p>
+        <h1>My Profile 👤</h1>
+        <p>Manage your personal information and view your orders.</p>
+    </div>
+
+    <div class="profile-layout">
+        <section class="profile-card">
+            <div class="profile-avatar">👤</div>
+            <h2 id="profileDisplayName">Your Name</h2>
+            <p id="profileDisplayEmail">your@email.com</p>
+
+            <form id="profileForm">
+                <label for="profileName">Full Name</label>
+                <input id="profileName" name="name" type="text"
+                    placeholder="Enter your name" required maxlength="60">
+
+                <label for="profileEmail">Email Address</label>
+                <input id="profileEmail" name="email" type="email"
+                    placeholder="Enter your email" required maxlength="120">
+
+                <button type="submit" class="profile-save-btn">
+                    Save Profile
+                </button>
+                <p id="profileMessage" class="profile-message"
+                    aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="profile-orders">
+            <div class="profile-orders-heading">
+                <div>
+                    <h2>Order History 📦</h2>
+                    <p>Your recent demo orders</p>
+                </div>
+                <span id="profileOrderCount">0 orders</span>
+            </div>
+
+            <div id="profileOrderList"></div>
+
+            <a href="catalog.html" class="profile-shop-btn">
+                Explore Products →
+            </a>
+        </section>
+    </div>
+</main>
+
+<script src="products.js" defer></script>
+<script src="script.js" defer></script>
+</body>
+</html>

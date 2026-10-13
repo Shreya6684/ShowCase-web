@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details | ShowCase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="product.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="products.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="product.js" defer></script>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i>
+        <span>Show<span class="logo-highlight">Case</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="catalog.html" class="active">Explore Products</a>
+        <a href="brands.html">Brands</a>
+        <details class="nav-dropdown">
+          <summary class="nav-dropdown-trigger">
+            Categories <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </summary>
+          <div class="mega-menu">
+            <div class="mega-menu-intro">
+              <span class="section-eyebrow">BROWSE COLLECTIONS</span>
+              <h2>Shop by category</h2>
+              <p>Find the right tech for work, play, and everything between.</p>
+              <a class="mega-menu-all" href="index.html#categories">
+                View all categories <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+            <div class="mega-menu-links">
+              <a href="catalog.html?category=Laptops"><i class="fa-solid fa-laptop" aria-hidden="true"></i><span><strong>Laptops</strong><small>Power for work and study</small></span></a>
+              <a href="catalog.html?category=Smartphones"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i><span><strong>Smartphones</strong><small>Stay connected anywhere</small></span></a>
+              <a href="catalog.html?category=Audio"><i class="fa-solid fa-headphones" aria-hidden="true"></i><span><strong>Audio</strong><small>Sound for every moment</small></span></a>
+              <a href="catalog.html?category=Wearables"><i class="fa-solid fa-clock" aria-hidden="true"></i><span><strong>Wearables</strong><small>Everyday tech, on the go</small></span></a>
+              <a href="catalog.html?category=Tablets"><i class="fa-solid fa-tablet-screen-button" aria-hidden="true"></i><span><strong>Tablets</strong><small>Big ideas, portable screens</small></span></a>
+              <a href="catalog.html?category=Cameras"><i class="fa-solid fa-camera" aria-hidden="true"></i><span><strong>Cameras</strong><small>Capture what matters</small></span></a>
+              <a href="catalog.html?category=Accessories"><i class="fa-solid fa-computer-mouse" aria-hidden="true"></i><span><strong>Accessories</strong><small>Useful finishing touches</small></span></a>
+            </div>
+          </div>
+        </details>
+        <a href="compare.html">Compare</a>
+        <a href="index.html#featured">Featured</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="darkModeToggle" class="icon-btn" type="button"
+                aria-label="Toggle dark mode" title="Toggle theme">
+          <i class="fa-solid fa-moon" aria-hidden="true"></i>
+        </button>
+        <a href="wishlist.html" class="nav-wishlist">
+          <i class="fa-regular fa-heart" aria-hidden="true"></i>
+          <span>Wishlist</span>
+        </a>
+        <a href="login.html" class="nav-account" data-account-link>Login / Register</a>
+        <button type="button" class="nav-logout" data-nav-logout hidden>Logout</button>
+        <a href="cart.html" class="nav-cta">
+          Go to Cart <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="product-details-page">
+    <div class="product-breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <a href="catalog.html">Products</a>
+      <span>/</span>
+      <span>Details</span>
+    </div>
+
+    <div id="productDetails" class="product-details-container">
+      <p>Loading product details...</p>
+    </div>
+
+    <section class="product-demo-section" aria-labelledby="productDemoTitle">
+      <div class="product-feature-heading">
+        <p class="section-kicker">EXPLORE THE PRODUCT</p>
+        <h2 id="productDemoTitle">Interactive Product Demo</h2>
+        <p>Inspect the product image, adjust the view, or switch to its details.</p>
+      </div>
+      <div class="product-demo-layout" id="productDemo"></div>
+    </section>
+
+    <section class="product-reviews-section" aria-labelledby="productReviewsTitle">
+      <div class="product-feature-heading">
+        <p class="section-kicker">CUSTOMER FEEDBACK</p>
+        <h2 id="productReviewsTitle">Reviews &amp; Ratings</h2>
+        <p id="reviewSummary">Customer ratings and comments for this product.</p>
+      </div>
+      <div class="product-reviews-layout">
+        <div id="productReviewList" class="product-review-list"></div>
+        <div id="productReviewFormArea" class="product-review-form-area"></div>
+      </div>
+    </section>
+
+    <section class="similar-products-section">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">YOU MAY ALSO LIKE</p>
+          <h2 class="section-heading">Similar Products</h2>
+        </div>
+        <a href="catalog.html" class="view-all">Explore All →</a>
+      </div>
+
+      <div id="similarProducts" class="product-grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>© 2026 ShowCase. Discover products you love.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

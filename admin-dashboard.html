@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | ShowCase</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body class="admin-page">
+
+    <aside class="admin-sidebar">
+        <a href="index.html" class="admin-logo">Show<span>Case.</span></a>
+
+        <p class="admin-nav-label">WORKSPACE</p>
+        <a href="#overview" class="admin-nav-link active" data-section="overview">
+            <i class="fa-solid fa-chart-pie"></i> Overview
+        </a>
+        <a href="#products" class="admin-nav-link" data-section="products">
+            <i class="fa-solid fa-box"></i> Products
+        </a>
+        <a href="#orders" class="admin-nav-link" data-section="orders">
+            <i class="fa-solid fa-bag-shopping"></i> Orders
+        </a>
+        <a href="#reviews" class="admin-nav-link" data-section="reviews">
+            <i class="fa-solid fa-star"></i> Reviews
+        </a>
+        <a href="#inquiries" class="admin-nav-link" data-section="inquiries">
+            <i class="fa-regular fa-comments"></i> Inquiries
+        </a>
+
+        <div class="admin-sidebar-bottom">
+            <a href="index.html" class="admin-nav-link">
+                <i class="fa-solid fa-store"></i> View Store
+            </a>
+            <button type="button" id="adminLogout" class="admin-nav-link admin-logout">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </button>
+        </div>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-topbar">
+            <div>
+                <p class="admin-eyebrow">SHOWCASE MANAGEMENT</p>
+                <h1 id="adminPageTitle">Dashboard Overview</h1>
+            </div>
+            <div class="admin-account">
+                <span class="admin-avatar"><i class="fa-solid fa-user-shield"></i></span>
+                <div>
+                    <strong id="adminName">Admin</strong>
+                    <small>Administrator</small>
+                </div>
+            </div>
+        </header>
+
+        <section class="admin-section active" id="overview">
+            <div class="admin-welcome">
+                <div>
+                    <h2>Welcome back, Admin! 👋</h2>
+                    <p>Here's what's happening in your store.</p>
+                </div>
+                <button type="button" class="admin-primary-btn" data-go="products">
+                    <i class="fa-solid fa-plus"></i> Add Product
+                </button>
+            </div>
+
+            <div class="admin-stats">
+                <article class="admin-stat-card">
+                    <span class="admin-stat-icon purple"><i class="fa-solid fa-box"></i></span>
+                    <p>Total Products</p>
+                    <h2 id="statProducts">0</h2>
+                </article>
+                <article class="admin-stat-card">
+                    <span class="admin-stat-icon blue"><i class="fa-solid fa-bag-shopping"></i></span>
+                    <p>Total Orders</p>
+                    <h2 id="statOrders">0</h2>
+                </article>
+                <article class="admin-stat-card">
+                    <span class="admin-stat-icon green"><i class="fa-solid fa-indian-rupee-sign"></i></span>
+                    <p>Recorded Order Value</p>
+                    <h2 id="statRevenue">₹0</h2>
+                </article>
+                <article class="admin-stat-card">
+                    <span class="admin-stat-icon orange"><i class="fa-solid fa-star"></i></span>
+                    <p>Customer Reviews</p>
+                    <h2 id="statReviews">0</h2>
+                </article>
+            </div>
+
+            <div class="admin-panel">
+                <div class="admin-panel-heading">
+                    <div>
+                        <h2>Recent Orders</h2>
+                        <p>Orders saved by the checkout demo.</p>
+                    </div>
+                    <button class="admin-text-btn" data-go="orders">View all</button>
+                </div>
+                <div class="admin-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Date</th>
+                                <th>Items</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="overviewOrders"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="admin-section" id="products">
+            <div class="admin-panel">
+                <div class="admin-panel-heading">
+                    <div>
+                        <h2>Product Management</h2>
+                        <p>Add products or update and remove existing ones.</p>
+                    </div>
+                    <button type="button" id="showProductForm" class="admin-primary-btn">
+                        <i class="fa-solid fa-plus"></i> Add Product
+                    </button>
+                </div>
+
+                <form id="adminProductForm" class="admin-product-form" hidden>
+                    <h3 id="productFormTitle">Add New Product</h3>
+                    <input type="hidden" id="editProductId">
+
+                    <div class="admin-form-grid">
+                        <label>Product Name
+                            <input id="newProductName" required maxlength="120">
+                        </label>
+                        <label>Brand
+                            <input id="newProductBrand" required maxlength="80">
+                        </label>
+                        <label>Category
+                            <input id="newProductCategory" required maxlength="80">
+                        </label>
+                        <label>Price (₹)
+                            <input id="newProductPrice" type="number" min="0" step="0.01" required>
+                        </label>
+                        <label>Original Price (₹)
+                            <input id="newProductOldPrice" type="number" min="0" step="0.01">
+                        </label>
+                        <label>Product Image URL
+                            <input id="newProductImage" type="url" placeholder="https://example.com/image.jpg">
+                        </label>
+                        <label>Back Image URL (optional)
+                            <input id="newProductBackImage" type="url" placeholder="https://example.com/product-back.jpg">
+                        </label>
+                        <label>Emoji fallback
+                            <input id="newProductEmoji" maxlength="8" placeholder="📦">
+                        </label>
+                        <label>Badge
+                            <input id="newProductBadge" maxlength="40" placeholder="Popular">
+                        </label>
+                    </div>
+
+                    <label class="admin-description-label">Description
+                        <textarea id="newProductDescription" rows="3" maxlength="1000"></textarea>
+                    </label>
+
+                    <div class="admin-form-actions">
+                        <button type="submit" class="admin-primary-btn">Save Product</button>
+                        <button type="button" id="cancelProductForm" class="admin-secondary-btn">Cancel</button>
+                    </div>
+                </form>
+
+                <div class="admin-toolbar">
+                    <input id="adminProductSearch" type="search" placeholder="Search products...">
+                    <span id="adminProductCount">0 products</span>
+                </div>
+
+                <div class="admin-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Rating</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminProductsBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="admin-section" id="orders">
+            <div class="admin-panel">
+                <div class="admin-panel-heading">
+                    <div>
+                        <h2>Order Management</h2>
+                        <p>Review saved orders and update their status.</p>
+                    </div>
+                </div>
+                <div class="admin-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Date</th>
+                                <th>Items</th>
+                                <th>Total</th>
+                                <th>Update Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminOrdersBody"></tbody>
+                    </table>
+                </div>
+                <p class="admin-footnote">Status changes are stored in this browser only. This demo does not contact a delivery service.</p>
+            </div>
+        </section>
+
+        <section class="admin-section" id="reviews">
+            <div class="admin-panel">
+                <div class="admin-panel-heading">
+                    <div>
+                        <h2>Customer Reviews</h2>
+                        <p>Review ratings and comments submitted by customers.</p>
+                    </div>
+                </div>
+                <div id="adminReviewsList" class="admin-reviews-list"></div>
+            </div>
+        </section>
+
+        <section class="admin-section" id="inquiries">
+            <div class="admin-panel">
+                <div class="admin-panel-heading">
+                    <div>
+                        <h2>Product Inquiries</h2>
+                        <p>Questions submitted through the storefront contact form.</p>
+                    </div>
+                </div>
+                <div class="admin-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Reference</th>
+                                <th>Customer</th>
+                                <th>Email</th>
+                                <th>Product</th>
+                                <th>Question</th>
+                                <th>Received</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminInquiriesBody"></tbody>
+                    </table>
+                </div>
+                <p class="admin-footnote">Inquiry records are stored in this browser. Respond using the customer's email address.</p>
+            </div>
+        </section>
+
+        <footer class="admin-footer">
+            ShowCase Admin Panel · Frontend project
+        </footer>
+    </main>
+
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

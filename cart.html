@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | ShowCase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i>
+                <span>Show<span class="logo-highlight">Case</span></span>
+            </a>
+
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="catalog.html">Explore Products</a>
+                <a href="brands.html">Brands</a>
+                <a href="compare.html">Compare</a>
+                <a href="wishlist.html">Wishlist</a>
+                <a href="contact.html">Contact</a>
+                <a href="cart.html" class="active" aria-current="page">Cart</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="login.html" class="nav-account" data-account-link>Login / Register</a>
+                <button type="button" class="nav-logout" data-nav-logout hidden>Logout</button>
+                <button id="darkModeToggle" class="icon-btn" type="button"
+                        aria-label="Toggle dark mode" title="Toggle theme">
+                    <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="cart-page">
+        <div class="cart-heading">
+            <p class="cart-eyebrow">YOUR SHOPPING BAG</p>
+            <h1>Shopping Cart 🛒</h1>
+            <p>Review your items before checkout.</p>
+        </div>
+
+        <div class="cart-layout">
+            <section class="cart-items-section">
+                <div class="cart-items-heading">
+                    <h2>Your Items</h2>
+                    <span id="cartItemCount">0 items</span>
+                </div>
+                <div id="cartItems"></div>
+            </section>
+
+            <aside class="cart-summary">
+                <h2>Order Summary</h2>
+                <div class="cart-summary-row">
+                    <span>Items</span>
+                    <span id="cartSubtotal">₹0</span>
+                </div>
+                <div class="cart-summary-row">
+                    <span>Delivery</span>
+                    <span class="cart-free">FREE</span>
+                </div>
+                <div class="cart-summary-row cart-total-row">
+                    <span>Total</span>
+                    <strong id="cartTotal">₹0</strong>
+                </div>
+                <button id="checkoutButton" class="cart-checkout-btn">
+                    Proceed to Checkout →
+                </button>
+                <a href="catalog.html" class="cart-continue-link">
+                    ← Continue Shopping
+                </a>
+                <p class="cart-secure-note">🔒 Your cart is saved on this device.</p>
+            </aside>
+        </div>
+    </main>
+
+    <script src="products.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

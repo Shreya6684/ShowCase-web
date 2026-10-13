@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Products | ShowCase</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="compare.css">
+
+  <script src="products.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="compare.js" defer></script>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Show<span class="logo-highlight">Case</span></a>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Explore Products</a>
+        <a href="brands.html">Brands</a>
+        <a href="compare.html" class="active">Compare</a>
+        <a href="wishlist.html">Wishlist</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">Cart</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="nav-account" data-account-link>Login / Register</a>
+        <button type="button" class="nav-logout" data-nav-logout hidden>Logout</button>
+        <button id="themeToggle" class="icon-btn" type="button"
+          aria-label="Toggle dark mode">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="compare-page">
+    <section class="compare-heading">
+      <span class="section-eyebrow">MAKE SMARTER CHOICES</span>
+      <h1>Compare Products</h1>
+      <p>Compare features, ratings and prices before choosing your next gadget.</p>
+      <a href="catalog.html" class="primary-btn">+ Add Products</a>
+    </section>
+
+    <section class="compare-content">
+      <div class="compare-toolbar">
+        <p id="compareCount">Loading comparison...</p>
+        <button id="clearCompare" class="compare-clear-btn" type="button">
+          Clear All
+        </button>
+      </div>
+
+      <div id="compareContainer">
+        <p>Loading products...</p>
+      </div>
+
+      <div id="compareEmpty" class="compare-empty" hidden>
+        <div class="compare-empty-icon">⇄</div>
+        <h2>No products to compare</h2>
+        <p>Add products from the catalog to compare them here.</p>
+        <a href="catalog.html" class="primary-btn">Explore Products</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 ShowCase. Discover products you love.</p>
+        <a href="index.html">Back to Home ↑</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

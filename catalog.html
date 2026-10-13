@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore and compare products on ShowCase.">
+    <title>Explore Products | ShowCase</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-cubes-stacked"></i>
+                <span>Show<span class="logo-highlight">Case</span></span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="catalog.html" class="active">Explore Products</a>
+                <a href="brands.html">Brands</a>
+                <details class="nav-dropdown">
+                    <summary class="nav-dropdown-trigger">
+                        Categories <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
+                    <div class="mega-menu">
+                        <div class="mega-menu-intro">
+                            <span class="section-eyebrow">BROWSE COLLECTIONS</span>
+                            <h2>Shop by category</h2>
+                            <p>Find the right tech for work, play, and everything between.</p>
+                            <a class="mega-menu-all" href="index.html#categories">
+                                View all categories <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="mega-menu-links">
+                            <a href="catalog.html?category=Laptops"><i class="fa-solid fa-laptop" aria-hidden="true"></i><span><strong>Laptops</strong><small>Power for work and study</small></span></a>
+                            <a href="catalog.html?category=Smartphones"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i><span><strong>Smartphones</strong><small>Stay connected anywhere</small></span></a>
+                            <a href="catalog.html?category=Audio"><i class="fa-solid fa-headphones" aria-hidden="true"></i><span><strong>Audio</strong><small>Sound for every moment</small></span></a>
+                            <a href="catalog.html?category=Wearables"><i class="fa-solid fa-clock" aria-hidden="true"></i><span><strong>Wearables</strong><small>Everyday tech, on the go</small></span></a>
+                            <a href="catalog.html?category=Tablets"><i class="fa-solid fa-tablet-screen-button" aria-hidden="true"></i><span><strong>Tablets</strong><small>Big ideas, portable screens</small></span></a>
+                            <a href="catalog.html?category=Cameras"><i class="fa-solid fa-camera" aria-hidden="true"></i><span><strong>Cameras</strong><small>Capture what matters</small></span></a>
+                            <a href="catalog.html?category=Accessories"><i class="fa-solid fa-computer-mouse" aria-hidden="true"></i><span><strong>Accessories</strong><small>Useful finishing touches</small></span></a>
+                        </div>
+                    </div>
+                </details>
+                <a href="compare.html">Compare</a>
+                <a href="index.html#featured">Featured</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="darkModeToggle" class="icon-btn" type="button"
+                        aria-label="Toggle dark mode" title="Toggle theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <a href="wishlist.html" class="nav-wishlist">
+                    <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                    <span>Wishlist</span>
+                </a>
+                <a href="login.html" class="nav-account" data-account-link>Login / Register</a>
+                <button type="button" class="nav-logout" data-nav-logout hidden>Logout</button>
+                <a href="cart.html" class="nav-cta">
+                    Go to Cart <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page heading -->
+        <section class="catalog-hero">
+            <div class="container">
+                <span class="eyebrow">THE SHOWCASE COLLECTION</span>
+                <h1>Find Your Next <span class="gradient-text">Favourite.</span></h1>
+                <p>Explore products, discover new brands and compare your favourites in one place.</p>
+
+                <div class="search-box catalog-search">
+                    <span aria-hidden="true">🔎</span>
+                    <input
+                        type="search"
+                        id="catalogSearch"
+                        placeholder="Search products or brands..."
+                        aria-label="Search products">
+                    <button type="button" id="catalogSearchButton" class="btn btn-primary">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catalog -->
+        <section class="section">
+            <div class="container">
+
+                <div class="section-head">
+                    <div>
+                        <h2>Explore Products</h2>
+                        <p id="productCount">Discover our collection</p>
+                    </div>
+                </div>
+
+                <div class="catalog-toolbar">
+                    <div class="catalog-categories" id="catalogCategories">
+                        <button class="filter-chip active" data-category="All" type="button">All Products</button>
+                    </div>
+
+                    <div class="catalog-sort">
+                        <label for="sortProducts">Sort by</label>
+                        <select id="sortProducts">
+                            <option value="default">Recommended</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Highest Rated</option>
+                            <option value="name">Name: A to Z</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="product-grid" id="catalogGrid">
+                    <p class="muted">Loading products...</p>
+                </div>
+
+                <p id="catalogEmpty" class="muted" hidden>
+                    No products found. Try another search or category.
+                </p>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2026 ShowCase. Discover products you love.</p>
+                <a href="index.html" class="text-link">Back to Home ↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="products.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="catalog.js" defer></script>
+</body>
+</html>
