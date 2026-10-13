@@ -80,29 +80,43 @@ No frontend framework or database is required for the current demo implementatio
 ## Project Structure
 
 ```text
-showcase-product-showcase-platform/
+ShowCase/
 │
-├── index.html
-├── catalog.html
-├── product.html
-├── compare.html
-├── cart.html
-├── login.html
-├── profile.html
-├── admin-dashboard.html
+├── index.html             # Homepage
+├── brands.html            # Brands listing page
+├── catalog.html           # Product catalogue and browsing
+├── product.html            # Product details page
+├── compare.html            # Product comparison page
+├── wishlist.html           # Wishlist page
+├── cart.html               # Shopping cart and checkout
+├── login.html              # Login and registration page
+├── profile.html            # User profile and order history
+├── admin-dashboard.html    # Admin dashboard
+├── contact.html            # Contact page
 │
-├── style.css
-├── product.css
-├── compare.css
+├── products.js             # Product data and product utilities
+├── script.js               # Main website functionality
+├── brands.js               # Brands page functionality
+├── catalog.js              # Catalogue functionality
+├── product.js              # Product details functionality
+├── compare.js              # Product comparison functionality
+├── wishlist.js             # Wishlist functionality
+├── contact.js              # Contact page functionality
 │
-├── products.js
-├── script.js
-├── catalog.js
-├── product.js
-├── compare.js
+├── style.css               # Main website styles
+├── product.css             # Product details page styles
+├── compare.css             # Product comparison styles
+├── features.css            # Additional feature styles
 │
-└── README.md
+└── README.md               # Project documentation
 ```
+
+### File Organization
+
+- **HTML Files:** Define the structure of the homepage, product pages, catalogue, brands, cart, wishlist, comparison, contact, login, profile, and admin dashboard.
+- **CSS Files:** Handle the website's appearance, product layouts, comparison page, and additional interface features.
+- **JavaScript Files:** Manage product data, page interactions, search and browsing, wishlist, comparison, contact functionality, and other interactive features.
+- **README.md:** Documents the project's overview, features, technology stack, setup instructions, and limitations.
 
 *Note: The structure above is representative. Keep only the files that exist in your final project and include any additional pages or stylesheets used by your implementation.*
 
