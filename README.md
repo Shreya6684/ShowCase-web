@@ -197,3 +197,5 @@ This project demonstrates practical skills in semantic HTML, CSS layouts, respon
 ## License
 
 This project is created for educational and internship purposes. Add a suitable license if you intend to distribute or reuse the project publicly.
+Project Blog Post: www.freeinternships.in/blog/ task-submission-das010156-product-showcase-platform
+Live Demo : https://showcase-web-eight.vercel.app
